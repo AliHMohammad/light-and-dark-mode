@@ -17,7 +17,7 @@ function modeSelected() {
 
     let selectedColor = this.value;
     changeMode(selectedColor);
-    saveUserColorMode(selectedColor)
+    setUserColorMode(selectedColor)
 }
 
 
@@ -42,17 +42,17 @@ function resetColorMode() {
 }
 
 
-function saveUserColorMode(mode){
+function setUserColorMode(mode){
     localStorage.setItem("userColorMode", mode);
 }
 
-function readUserColorMode() {
+function getUserColorMode() {
     const userColorMode = localStorage.getItem("userColorMode");
     return userColorMode;
 }
 
 function detectUserPreference() {
-    const modeFromLocalStorage = readUserColorMode();
+    const modeFromLocalStorage = getUserColorMode();
     console.log(modeFromLocalStorage);
 
     if (modeFromLocalStorage !== null) {
